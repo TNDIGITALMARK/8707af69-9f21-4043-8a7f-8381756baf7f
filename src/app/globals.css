@@ -1,59 +1,63 @@
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================
+   WESTEND CLUB DESIGN SYSTEM
+   Luxury social club aesthetic with navy, gold, and white
+   Typography: Playfair Display (serif) + Inter (sans-serif)
+   ============================================ */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  /* Westend Color Palette - Exact HSL values from design reference */
+  --navy-primary: 214 35% 15%;        /* #1a2332 - Header/Footer */
+  --gold-accent: 43 65% 52%;          /* #d4af37 - Logo/Icons */
+  --white-pure: 0 0% 100%;            /* #ffffff - Text/Cards */
+  --gray-light: 0 0% 96%;             /* #f5f5f5 - Backgrounds */
+  --gray-neutral: 0 0% 20%;           /* #333333 - Body text */
 
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  /* Semantic color mappings */
+  --background: var(--gray-light);
+  --foreground: var(--gray-neutral);
 
-  /* Popovers with white background */
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --card: var(--white-pure);
+  --card-foreground: var(--gray-neutral);
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
-  --primary-foreground: 0 0% 100%;
+  --popover: var(--white-pure);
+  --popover-foreground: var(--gray-neutral);
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  --primary: var(--navy-primary);
+  --primary-foreground: var(--white-pure);
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  --secondary: var(--gray-light);
+  --secondary-foreground: var(--gray-neutral);
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  --muted: var(--gray-light);
+  --muted-foreground: 0 0% 45%;
 
-  /* Destructive: Clean red */
+  --accent: var(--gold-accent);
+  --accent-foreground: var(--white-pure);
+
   --destructive: 0 70% 50%;
-  --destructive-foreground: 0 0% 100%;
+  --destructive-foreground: var(--white-pure);
 
-  /* Borders: Subtle gray */
   --border: 0 0% 90%;
   --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  --ring: var(--gold-accent);
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Border radius for cards/buttons */
+  --radius: 0.5rem;
 
-  /* Sidebar: Clean white with black text */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  /* Sidebar styling */
+  --sidebar-background: var(--navy-primary);
+  --sidebar-foreground: var(--white-pure);
+  --sidebar-primary: var(--gold-accent);
+  --sidebar-primary-foreground: var(--white-pure);
+  --sidebar-accent: 214 35% 20%;
+  --sidebar-accent-foreground: var(--white-pure);
+  --sidebar-border: 214 35% 25%;
+  --sidebar-ring: var(--gold-accent);
 }
 
 .dark {
@@ -98,35 +102,35 @@ All colors MUST be HSL.
   --container: 1400px;
   --container-center: true;
   --container-padding: 2rem;
-  
+
   /* Color System */
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  
+
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  
+
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  
+
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  
+
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  
+
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  
+
   --color-popover: hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-  
+
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-  
+
   --color-sidebar: hsl(var(--sidebar-background));
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-primary: hsl(var(--sidebar-primary));
@@ -135,12 +139,16 @@ All colors MUST be HSL.
   --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
-  
+
+  /* Westend Custom Colors */
+  --color-navy: hsl(var(--navy-primary));
+  --color-gold: hsl(var(--gold-accent));
+
   /* Border Radius */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  
+
   /* Animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -168,36 +176,134 @@ All colors MUST be HSL.
   border-color: hsl(var(--border));
 }
 
+/* ============================================
+   GLOBAL TYPOGRAPHY & ELEMENT STYLING
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Minimal, clean typography */
+/* Luxury Serif Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: hsl(var(--foreground));
+  margin-top: 0;
 }
 
-/* Clean button styles */
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 0.875rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 0.625rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: hsl(var(--gold-accent));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: hsl(43 65% 45%);
+}
+
+/* Premium Button Styles */
 button {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Subtle shadows for depth */
+/* Luxury Card Shadows */
 .shadow-sm {
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.1);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.15);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 24px 0 rgb(0 0 0 / 0.2);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.text-gold {
+  color: hsl(var(--gold-accent));
+}
+
+.bg-navy {
+  background-color: hsl(var(--navy-primary));
+}
+
+.bg-gold {
+  background-color: hsl(var(--gold-accent));
 }

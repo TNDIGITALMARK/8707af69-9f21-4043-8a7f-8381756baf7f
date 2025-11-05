@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Westend Club - Where Exclusivity Meets Entertainment",
+  description: "Join an exclusive community of discerning individuals at Westend Club. Premium social club offering luxury amenities, curated events, and world-class service.",
 };
 
 export default function RootLayout({
